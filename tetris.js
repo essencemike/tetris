@@ -74,31 +74,32 @@ var blockArr = [
 var colors = ["#fff","red","blue","yellow","green","black","pink","orange"];
 
 //构造俄罗斯方块的类
-var Tetris = function(){
+function Tetris() {
+	
 	//定义在在掉落的方块
 	this.currentFall = [];
-
+	
 	//记录已经固定的方块的状态
 	this.tetris_status = [];
-
+	
 	for(var i = 0; i < CONFIG.tetris_rows; i++){
 		this.tetris_status[i] = [];
 		for(var j = 0; j < CONFIG.tetris_cols; j++){
 			this.tetris_status[i][j] = "NO_BLOCK";
 		}
 	}
-
+	
 	this.tetris_canvas = null;
 	this.tetris_ctx = null;
-
+	
 	//定义游戏状态
 	this.isPlaying = true;
-
+	
 	//获取当前速度，积分，最高积分的对象
 	this.curScoreEle = document.getElementById("curScoreEle");
 	this.curSpeedEle = document.getElementById("curSpeedEle");
 	this.maxScoreEle = document.getElementById("maxScoreEle");
-
+	
 	//定时器
 	this.curTimer = null;
 }
