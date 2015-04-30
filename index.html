@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>俄罗斯方块</title>
+	<style type="text/css">
+		.clearfix {
+			*zoom: 1;
+		}
+		.clearfix:before,
+		.clearfix:after {
+			content: " ";
+			display: table;
+		}
+		.clearfix:after {
+			clear: both;
+		}
+		.container {
+			width: 350px;
+			border: 1px solid #ddd;
+			background-color: #ff9;
+			margin-bottom: 4px;
+		}
+		#container {
+			width: 350px;
+			margin: 0 auto;
+		}
+		.left {
+			float: left;
+		}
+		.right {
+			float: right;
+		}
+		.left, .right {
+			padding: 4px;
+		}
+	</style>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="tetris.js"></script>
+	<script type="text/javascript">
+	// 'use strict';
+	window.onload = function() {
+		var tetris = new Tetris();
+		tetris.init();
+	};
+	</script>
+</head>
+<body>
+	<div id="container">
+		<h2>俄罗斯方块</h2>
+		<div class="container clearfix">
+			<div class="left">
+				速度： <span id="curSpeedEle"></span>&nbsp;&nbsp;
+				当前积分： <span id="curScoreEle"></span>
+			</div>
+			<div class="right">
+				最高积分： <span id="maxScoreEle"></span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
